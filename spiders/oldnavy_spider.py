@@ -1,10 +1,11 @@
 import scrapy
 
 class OldnavyScraping(scrapy.Spider):
-    name    = "oldnavy"
+    # identifies the spider
+    name        = "oldnavy"
 
+    # This list uses by default implementation of start_requests() method
     start_urls  = ["https://oldnavy.gap.com/"];
-
     # New Arrivals section
     def parse(self, response):
         header      =  response.css('div.new-arrivals-container div.new-arrivals-ctas h3 a::text').extract();
